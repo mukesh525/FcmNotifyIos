@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		156C19D68ABAA3D0EC92981E /* Pods_FCMNotificationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932DE16EA6694E6D01276CA2 /* Pods_FCMNotificationUITests.framework */; };
 		3C80466873F83B7F69D7299E /* Pods_FCMNotificationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAD95120894E0D6DC9BEBD6 /* Pods_FCMNotificationTests.framework */; };
+		8B67BC071E48703200A3EB6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B67BC061E48703200A3EB6E /* GoogleService-Info.plist */; };
 		8B90047A1E44636F008F875D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9004791E44636F008F875D /* AppDelegate.swift */; };
 		8B90047C1E44636F008F875D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90047B1E44636F008F875D /* ViewController.swift */; };
 		8B90047F1E44636F008F875D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B90047D1E44636F008F875D /* Main.storyboard */; };
@@ -16,7 +17,6 @@
 		8B9004841E44636F008F875D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9004821E44636F008F875D /* LaunchScreen.storyboard */; };
 		8B90048F1E44636F008F875D /* FCMNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90048E1E44636F008F875D /* FCMNotificationTests.swift */; };
 		8B90049A1E44636F008F875D /* FCMNotificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9004991E44636F008F875D /* FCMNotificationUITests.swift */; };
-		8B9004A81E44639C008F875D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B9004A71E44639C008F875D /* GoogleService-Info.plist */; };
 		9AD0A7A9EAA5DFB292F523EE /* Pods_FCMNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A60F4821D5220618DAAD82 /* Pods_FCMNotification.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +45,7 @@
 		729E8548A9C98E6B78A96A7A /* Pods-FCMNotificationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FCMNotificationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FCMNotificationTests/Pods-FCMNotificationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		800379E6572F96C57EE502CD /* Pods-FCMNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FCMNotification.release.xcconfig"; path = "Pods/Target Support Files/Pods-FCMNotification/Pods-FCMNotification.release.xcconfig"; sourceTree = "<group>"; };
 		8B67BBFD1E483B7B00A3EB6E /* FCMNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FCMNotification.entitlements; sourceTree = "<group>"; };
+		8B67BC061E48703200A3EB6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8B9004761E44636F008F875D /* FCMNotification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FCMNotification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9004791E44636F008F875D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B90047B1E44636F008F875D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		8B9004951E44636F008F875D /* FCMNotificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FCMNotificationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9004991E44636F008F875D /* FCMNotificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMNotificationUITests.swift; sourceTree = "<group>"; };
 		8B90049B1E44636F008F875D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B9004A71E44639C008F875D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8EAD95120894E0D6DC9BEBD6 /* Pods_FCMNotificationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FCMNotificationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A60F4821D5220618DAAD82 /* Pods_FCMNotification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FCMNotification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		932DE16EA6694E6D01276CA2 /* Pods_FCMNotificationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FCMNotificationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +134,7 @@
 				8B9004801E44636F008F875D /* Assets.xcassets */,
 				8B9004821E44636F008F875D /* LaunchScreen.storyboard */,
 				8B9004851E44636F008F875D /* Info.plist */,
-				8B9004A71E44639C008F875D /* GoogleService-Info.plist */,
+				8B67BC061E48703200A3EB6E /* GoogleService-Info.plist */,
 			);
 			path = FCMNotification;
 			sourceTree = "<group>";
@@ -298,7 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B9004841E44636F008F875D /* LaunchScreen.storyboard in Resources */,
-				8B9004A81E44639C008F875D /* GoogleService-Info.plist in Resources */,
+				8B67BC071E48703200A3EB6E /* GoogleService-Info.plist in Resources */,
 				8B9004811E44636F008F875D /* Assets.xcassets in Resources */,
 				8B90047F1E44636F008F875D /* Main.storyboard in Resources */,
 			);

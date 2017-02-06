@@ -7,7 +7,7 @@ import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+    let notificationName = Notification.Name("NotificationIdentifier")
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
     
@@ -56,11 +56,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // TODO: Handle data of notification
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
+            print("Message ID 3: \(messageID)")
         }
         
         // Print full message.
         print(userInfo)
+        handleNotification(userInfo)
+        
+        
+        
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
@@ -70,13 +74,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // TODO: Handle data of notification
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
+            print("Message ID 2: \(messageID)")
         }
         
         // Print full message.
         print(userInfo)
-        
+        handleNotification(userInfo)
         completionHandler(UIBackgroundFetchResult.newData)
+        
+        
     }
     // [END receive_message]
     // [START refresh_token]
@@ -120,12 +126,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // With swizzling disabled you must set the APNs token here.
         FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: FIRInstanceIDAPNSTokenType.sandbox)
-       // FIRInstanceID.instanceID().setAPNSToken(deviceToken, type:FIRInstanceIDAPNSTokenType.prod)
+        // FIRInstanceID.instanceID().setAPNSToken(deviceToken, type:FIRInstanceIDAPNSTokenType.prod)
     }
     
     // [START connect_on_active]
     func applicationDidBecomeActive(_ application: UIApplication) {
         connectToFcm()
+        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil)
     }
     // [END connect_on_active]
     // [START disconnect_from_fcm]
@@ -147,12 +154,12 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         let userInfo = notification.request.content.userInfo
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
+            print("Message ID 1: \(messageID)")
         }
         
         // Print full message.
         print(userInfo)
-        
+        handleNotification(userInfo)
         // Change this to your preferred presentation option
         completionHandler([])
     }
@@ -163,15 +170,40 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         let userInfo = response.notification.request.content.userInfo
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
+            print("Message ID 0: \(messageID)")
         }
-        
-        // Print full message.
-        print(userInfo)
-        
+        handleNotification(userInfo)
         completionHandler()
-    }
+       
+      }
 }
+
+
+func handleNotification(_ userInfo :[AnyHashable:Any]){
+    if let aps = userInfo["aps"] as? NSDictionary {
+        if let alert = aps["alert"] as? NSDictionary {
+            if let message = alert["message"] as? NSString {
+                //Do stuff
+                print("Message : \(message)")
+                
+            }
+        } else if let alert = aps["alert"] as? NSString {
+            //Do stuff
+            print("Alert  : \(alert)")
+            
+            if let dec = userInfo["google.c.a.c_l"] as? NSString {
+                print("desc :  \(dec)")
+                
+            }
+        }
+        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: userInfo)
+        
+        
+    }
+    
+}
+
+
 // [END ios_10_message_handling]
 // [START ios_10_data_message_handling]
 extension AppDelegate : FIRMessagingDelegate {
